@@ -20,12 +20,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from sistema_ventas.views import *
 from AppPerfiles.urls import *
+from AppTienda.urls import *
 
 
 urlpatterns = [
     path('', inicio, name='inicio'),
     path('admin/', admin.site.urls),
     path('perfiles/', include('AppPerfiles.urls')),
+    path('vehiculos/', include('AppTienda.urls')),
 ]
 
 

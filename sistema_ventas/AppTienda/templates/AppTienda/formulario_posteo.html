@@ -1,0 +1,53 @@
+{% extends "AppTienda/base.html" %}
+
+{% block contenido %}
+<section class="get-in-touch">
+    <h1 class="title">Nuevo Vehiculo</h1>
+    <form class="contact-form row" action="{% url 'crear_vehiculos' %}" method="post">
+        {% csrf_token %}
+        <div class="form-field col-lg-6">
+          <input name="marca" class="input-text js-input" type="text" required>
+          <label class="label" for="marca">Marca</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="modelo" class="input-text js-input" type="text" required>
+            <label class="label" for="modelo">Modelo</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="year" class="input-text js-input" type="text" required>
+            <label class="label" for="year">Año</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="kilometros" class="input-text js-input" type="text" required>
+            <label class="label" for="kilometros">Kilometraje</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="email" class="input-text js-input" type="email">
+            <label class="label" for="email">Email de contacto</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="telefono" class="input-text js-input" type="text" required>
+            <label class="label" for="telefono">Numero de Contacto</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="patente" class="input-text js-input" type="text">
+            <label class="label" for="patente">Patente del Vehiculo</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="precio" class="input-text js-input" type="text" required>
+            <label class="label" for="precio">Precio</label>
+        </div>
+        <div class="form-field col-lg-6">
+            <input name="fotos" class="input-text js-input" type="file" accept="image/*" cursorshover="true">
+            <label class="label" for="fotos">Imagenes</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <input name="descripcion" class="input-text js-input" type="text" required>
+            <label class="label" for="descripcion">Message</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <input class="submit-btn" type="submit" value="Confirmar">
+        </div>
+    </form>
+ </section>
+{% endblock contenido %}
