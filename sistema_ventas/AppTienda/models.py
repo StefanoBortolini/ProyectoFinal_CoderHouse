@@ -11,10 +11,12 @@ class Posteo(models.Model):
     marca               = models.CharField(max_length=32)
     modelo              = models.CharField(max_length=32)
     year                = models.IntegerField()
-    kilometros          = models.IntegerField
+    kilometros          = models.IntegerField()
     descripcion         = models.CharField(max_length=1500)
     email               = models.EmailField(null=True)
     telefono            = models.IntegerField()
     patente             = models.CharField(max_length=7, blank=True)
     precio              = models.IntegerField()
     fotos               = models.ImageField(upload_to='fotos_vehiculos', null=True, blank=True)
+    reserva             = models.BooleanField(default=False)
+    user_reserva        = models.CharField(max_length=64)

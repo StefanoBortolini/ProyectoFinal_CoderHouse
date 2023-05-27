@@ -3,22 +3,22 @@
 {% block contenido %}
 <section class="get-in-touch">
     <h1 class="title">Nuevo Vehiculo</h1>
-    <form class="contact-form row" action="{% url 'crear_vehiculos' %}" method="post">
+    <form class="contact-form row"  method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-field col-lg-6">
-          <input name="marca" class="input-text js-input" type="text" required>
+          <input name="marca" class="input-text js-input" type="text" maxlength="32" required>
           <label class="label" for="marca">Marca</label>
         </div>
         <div class="form-field col-lg-6">
-            <input name="modelo" class="input-text js-input" type="text" required>
+            <input name="modelo" class="input-text js-input" type="text" maxlength="32" required>
             <label class="label" for="modelo">Modelo</label>
         </div>
         <div class="form-field col-lg-6">
-            <input name="year" class="input-text js-input" type="text" required>
+            <input name="year" class="input-text js-input" type="text" maxlength="4" required>
             <label class="label" for="year">Año</label>
         </div>
         <div class="form-field col-lg-6">
-            <input name="kilometros" class="input-text js-input" type="text" required>
+            <input name="kilometros" class="input-text js-input" type="text" maxlength="9" required>
             <label class="label" for="kilometros">Kilometraje</label>
         </div>
         <div class="form-field col-lg-6">
@@ -26,11 +26,11 @@
             <label class="label" for="email">Email de contacto</label>
         </div>
         <div class="form-field col-lg-6">
-            <input name="telefono" class="input-text js-input" type="text" required>
+            <input name="telefono" class="input-text js-input" type="text" maxlength="20" required>
             <label class="label" for="telefono">Numero de Contacto</label>
         </div>
         <div class="form-field col-lg-6">
-            <input name="patente" class="input-text js-input" type="text">
+            <input name="patente" class="input-text js-input" type="text" maxlength="7">
             <label class="label" for="patente">Patente del Vehiculo</label>
         </div>
         <div class="form-field col-lg-6">
@@ -42,7 +42,7 @@
             <label class="label" for="fotos">Imagenes</label>
         </div>
         <div class="form-field col-lg-12">
-            <input name="descripcion" class="input-text js-input" type="text" required>
+            <input name="descripcion" class="input-text js-input" type="text" maxlength="1500" required>
             <label class="label" for="descripcion">Message</label>
         </div>
         <div class="form-field col-lg-12">
