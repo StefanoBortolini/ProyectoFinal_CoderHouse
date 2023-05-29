@@ -10957,3 +10957,12 @@ img {
 nav ul li {
   list-style-type: none;
 }
+
+.contenedor {
+  display: flex;
+  justify-content: left;
+}
+
+.btnbetter {
+  margin-right: 18px; /* Espacio a la derecha de cada botón */
+}

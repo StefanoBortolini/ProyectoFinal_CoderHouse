@@ -81,18 +81,12 @@ class ModificarPosteo(LoginRequiredMixin, UpdateView):
     form_class = CrearPosteo
     template_name = 'AppTienda/modificar_posteo.html'
     success_url = reverse_lazy('all_posteos')
+    pk_url_kwarg = 'id'
 
     def get_object(self):
-        # Obtener el registro que tiene el mismo id que el pk de la URL
-        return get_object_or_404(Posteo, id=self.kwargs['pk'])
+        return super().get_object()
 
-
-# def eliminar_posteo(request):
-#     if request.method == "POST":
-#         data = request.POST
-#         id_posteo = data["id_posteo"]
-#         posteo = Posteo.objects.get(id=id_posteo)
-#         posteo.delete()
-#         return redirect('all_posteos')
-#     else:
-#         return HttpResponse("No se pudo ELIMINAR el registro")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CrearPosteo(instance=self.get_object())
+        return context

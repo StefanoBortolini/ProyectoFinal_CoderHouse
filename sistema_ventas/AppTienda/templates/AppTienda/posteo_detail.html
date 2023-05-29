@@ -14,17 +14,16 @@
                     <p>{{ object.descripcion }}</p>
                     {% if user.is_authenticated %}
                         {% if user.id == object.user_id %}
-                            {% comment %} <button class="btn btn-primary btn-rounded">Modificar</button> {% endcomment %}
-                            <form method="POST" action="{% url 'modificar' object.pk %}">
+                        <div class="col-lg-10 col-md-7 col-sm-6 contenedor">
+                            <form method="POST" action="{% url 'modificar' object.id %}">
                                 {% csrf_token %}
-                                {% comment %} <input type="hidden" name="id_posteo" value="{{ object.id }}"> {% endcomment %}
-                                <button type="submit" class="btn btn-primary btn-rounded">Editar</button>
+                                <button type="submit" class="btnbetter btn btn-primary btn-rounded">Editar</button>
                             </form>
                             <form method="POST" action="{% url 'eliminar' object.id %} ">
                                 {% csrf_token %}
-                                {% comment %} <input type="hidden" name="id_posteo" value="{{ object.id }}"> {% endcomment %}
-                                <button type="submit" class="btn btn-primary btn-rounded" display: 'inline' >Eliminar</button>
+                                <button type="submit" class="btnbetter btn btn-primary btn-rounded">Eliminar</button>
                             </form>
+                        </div>
                         {% else %}   
                             {% if object.reserva == False %}
                                 <form method="POST" action="{% url 'Reserva' %}">

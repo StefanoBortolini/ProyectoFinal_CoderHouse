@@ -12,5 +12,5 @@ urlpatterns = [
     path('ver_vehiculo/<int:pk>/', VehiculoDetailView.as_view(), name='ver_vehiculo'),
     path('reservar/', Reserva, name='Reserva'),
     path('eliminar_posteo/<int:id>/', eliminar_posteo, name='eliminar'),
-    path('modificar_posteo/<int:pk>/', ModificarPosteo.as_view(), name='modificar'),
+    path('modificar_posteo/<int:id>/', ModificarPosteo.as_view(), name='modificar'),
 ]
