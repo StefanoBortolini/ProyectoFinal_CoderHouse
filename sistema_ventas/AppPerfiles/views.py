@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 
-
+from AppPerfiles.models import Avatar
 from AppPerfiles.forms import UserRegisterForm, UserUpdateForm, AvatarFormulario
 
 
@@ -70,12 +70,13 @@ def agregar_avatar(request):
       formulario = AvatarFormulario(request.POST, request.FILES) # Aquí me llega toda la info del formulario html
 
       if formulario.is_valid():
-          avatar = formulario.save()
-          avatar.user = request.user
-          avatar.save()
-          url_exitosa = reverse('inicio')
-          return redirect(url_exitosa)
-  else:  # GET
+        avatar, created = Avatar.objects.update_or_create(
+            user=request.user,
+            defaults={"imagen": formulario.cleaned_data["imagen"]}
+        )
+        url_exitosa = reverse('inicio')
+        return redirect(url_exitosa)
+  else:
       formulario = AvatarFormulario()
   return render(
       request=request,

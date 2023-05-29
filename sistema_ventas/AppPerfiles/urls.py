@@ -6,10 +6,10 @@ from AppPerfiles.views import registro, login_view, CustomLogoutView, MiPerfilUp
 
 urlpatterns = [
     # URLS Usuario y sesion
-    path('registro/', registro, name="registro"),
+    path('signup/', registro, name="registro"),
     path('login/', login_view, name="login"),
     path('logout/', CustomLogoutView.as_view(), name="logout"),
     # URLS de Perfil
-    path('editar_perfil/', MiPerfilUpdateView.as_view(), name="editar_perfil"),
-    path('agregar_avatar/', agregar_avatar, name="agregar_avatar"),
+    path('profile/', MiPerfilUpdateView.as_view(), name="editar_perfil"),
+    path('change_avatar/', agregar_avatar, name="agregar_avatar"),
 ]

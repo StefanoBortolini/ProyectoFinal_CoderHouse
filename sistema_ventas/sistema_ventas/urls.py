@@ -26,7 +26,8 @@ from AppTienda.urls import *
 urlpatterns = [
     path('', inicio, name='inicio'),
     path('admin/', admin.site.urls),
-    path('perfiles/', include('AppPerfiles.urls')),
+    path('about/', about, name='about'),
+    path('accounts/', include('AppPerfiles.urls')),
     path('vehiculos/', include('AppTienda.urls')),
 ]
 

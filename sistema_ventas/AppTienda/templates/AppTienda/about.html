@@ -1,0 +1,35 @@
+
+{% extends "AppTienda/base.html" %}
+{% load static %}
+
+{% block contenido %}
+
+    <link href="{% static 'AppTienda/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'AppTienda/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'AppTienda/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'AppTienda/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'AppTienda/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'AppTienda/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'AppTienda/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    
+    <!-- Template Main CSS File -->
+    <link href="{% static 'AppTienda/css/About.css' %}" rel="stylesheet">
+
+
+    <div class="testimonial-item">
+        <img src="{% static 'AppTienda/assets/img/testimonials/testimonials-1.jpg' %}" class="rounded-circle" width="350" height="250">
+        <h3>Stefano Bortolini</h3>
+          <a href="https://www.linkedin.com/in/stefano-bortolini-73763a199/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <p>
+        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+        Soy un Desarrollador de Software, actualmente con mas de dos años de experiencia laboral. Siempre me gusto la informatica y eso llevo a que estudiara una carrera universitaria de Desarrollo de Sistemas. <n>
+        Me apasiona aprender nuevas tecnologías y herramientas, trabajar en equipo y compartir mis conocimientos.
+        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+        </p>
+    </div>
+{% endblock contenido %}

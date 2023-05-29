@@ -1,0 +1,59 @@
+{% extends "AppTienda/base.html" %}
+
+{% block contenido %}
+<section class="get-in-touch">
+    <h1 class="title">Modificar Vehiculo</h1>
+    <form class="contact-form row"  method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Campo oculto con el id del registro -->
+        <input type="hidden" name="id" value="{{ form.instance.id }}">
+        <div class="form-field col-lg-6">
+          <!-- Campo del formulario con el valor actual -->
+          {{ form.marca }}
+          <label class="label" for="marca">Marca</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.modelo }}
+            <label class="label" for="modelo">Modelo</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.year }}
+            <label class="label" for="year">Año</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.kilometros }}
+            <label class="label" for="kilometros">Kilometraje</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.email }}
+            <label class="label" for="email">Email de contacto</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.telefono }}
+            <label class="label" for="telefono">Numero de Contacto</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.patente }}
+            <label class="label" for="patente">Patente del Vehiculo</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.precio }}
+            <label class="label" for="precio">Precio</label>
+        </div>
+        <div class="form-field col-lg-6">
+            {{ form.fotos }}
+            <label class="label" for="fotos">Imagenes</label>
+        </div>
+        <div class="form-field col-lg-12">
+            {{ form.descripcion }}
+            <label class="label" for="descripcion">Message</label>
+        </div>
+        <div class="form-field col-lg-12">
+            <!-- Botón de confirmar -->
+            <input class="submit-btn" type="submit" value="Confirmar">
+            <!-- Botón de cancelar -->
+            <a class="submit-btn" href="{% url 'ver_vehiculo' object.pk %}" >Cancelar</a>
+        </div>
+    </form>
+</section>
+{% endblock contenido %}

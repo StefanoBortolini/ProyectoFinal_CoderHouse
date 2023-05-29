@@ -7,18 +7,23 @@
         <div class="card2-body">
             <h3 class="card2-title">{{ object.marca }} {{object.modelo}}</h3>
             <div class="row">
-                <div class="col-lg-5 col-md-5 col-sm-6">
-                    <div class="white-box text-center"><img src="{{ object.fotos.url }}" class="img-responsive"></div>
+                <div class="col-lg-10 col-md-5 col-sm-6">
+                    <div class="white-box text-center"><img src="{{ object.fotos.url }}" class="img-responsive" max></div>
                 </div>
                 <div class="col-lg-10 col-md-7 col-sm-6">
                     <p>{{ object.descripcion }}</p>
                     {% if user.is_authenticated %}
                         {% if user.id == object.user_id %}
-                            <button class="btn btn-primary btn-rounded">Modificar</button>
-                            <form method="POST" action="{% url 'eliminar' %}">
+                            {% comment %} <button class="btn btn-primary btn-rounded">Modificar</button> {% endcomment %}
+                            <form method="POST" action="{% url 'modificar' object.pk %}">
                                 {% csrf_token %}
-                                <input type="hidden" name="id_posteo" value="{{ object.id }}">
-                                <button type="submit" class="btn btn-primary btn-rounded">Eliminar</button>
+                                {% comment %} <input type="hidden" name="id_posteo" value="{{ object.id }}"> {% endcomment %}
+                                <button type="submit" class="btn btn-primary btn-rounded">Editar</button>
+                            </form>
+                            <form method="POST" action="{% url 'eliminar' object.id %} ">
+                                {% csrf_token %}
+                                {% comment %} <input type="hidden" name="id_posteo" value="{{ object.id }}"> {% endcomment %}
+                                <button type="submit" class="btn btn-primary btn-rounded" display: 'inline' >Eliminar</button>
                             </form>
                         {% else %}   
                             {% if object.reserva == False %}
@@ -27,7 +32,7 @@
                                     <input type="hidden" id="id_posteo" name="id_posteo" value="{{ object.id }}" required>
                                     <input type="hidden" id="reservado" name="reservado" value="True" required>
                                     <input type="hidden" id="user_reserva" name="user_reserva" value="{{ user.username}}" required>
-                                    <button type="submit">Reservar</button>
+                                    <button class="btn btn-primary btn-rounded" type="submit">Reservar</button>
                                 </form>
                             {% endif %}
                         {% endif %}
@@ -70,4 +75,7 @@
     </div>
 </div>
 
+{% if user.is_authenticated %}
+    <a class="btn btn-primary btn-rounded" href="{% url 'all_posteos' %}" >Volver</a>
+{% endif %}
 {% endblock contenido %}
