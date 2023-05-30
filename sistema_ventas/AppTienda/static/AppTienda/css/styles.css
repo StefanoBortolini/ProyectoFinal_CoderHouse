@@ -10958,6 +10958,10 @@ nav ul li {
   list-style-type: none;
 }
 
+.nav_ul_li {
+  list-style-type: none;
+}
+
 .contenedor {
   display: flex;
   justify-content: left;
