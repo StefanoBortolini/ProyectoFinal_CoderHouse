@@ -1,13 +1,8 @@
-## Video demostrativo de la aplicacion
-[[youtube-{16by9}-{_keq4DIXiFU}]]
+## Link del video demostrativo de la aplicacion
+https://youtu.be/_keq4DIXiFU
 
 
 Desde antemano, perdon por no poder mostrar todo el sistema en el video. Necesitaba mas de 5 min y cuando la extencion que use para grabar, llego a ese limite de tiempo, se corto automaticamente el video.
-
-Les dejo el usuario administrador por si necesitan ver el panel administrador:
-User:       admin
-Password:   admin123
-
 
 ### Funcionamiento del sistema por tipo de Usuario
 * Usuario NO logueado
@@ -25,7 +20,6 @@ Password:   admin123
     - El Usuario administrador podra hacer todo lo que hace el usuario logueado. Ademas de acceder a panel de administrador, desde el DropDown del Perfil.`
 
 
-
 ### Los botones de navegacion son:
 * DropDown de VEHICULOS: Desde alli se va a poder acceder a la pantalla de todos los vehiculos publicados (Todos los usuarios).
     * Acceser a las pantallas de "All Vehicles", "New Vehicles" y "My Vehicles" (Usuario Logueado).
@@ -35,6 +29,10 @@ Password:   admin123
     - Al no estar logueado, apareceran las opciones de "Login" y "SignUp".
     - Si hay un usuario logueado, se muestran las opciones de "Profile Settings", "Change Avatar" y "LogOut".
     - Si el usuario Admin es el que esta logueado, aparecera "Control Panel", que llevara al panel de administrador.
+
+Les dejo el usuario administrador por si necesitan ver el panel administrador:
+User:       admin
+Password:   admin123
 
 
 Disculpen si ven inconsistencia con algunos nombres de las view y demas. Al principio iba a ser una pagina donde se vendieran cualquier tipo de productos y a mitad del proceso la cambie por la tematica de los autos.
