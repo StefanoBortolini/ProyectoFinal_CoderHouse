@@ -25,7 +25,7 @@ Desde antemano, perdon por no poder mostrar todo el sistema en el video. Necesit
     * Acceser a las pantallas de "All Vehicles", "New Vehicles" y "My Vehicles" (Usuario Logueado).
     * Boton "About": Aqui lleva a la pantalla donde esta la informacion del autor de la pagina (en este caso yo).
 - DropDown del PERFIL: 
-    - Se accede apretando en la foto del Usuario (arriba a la derecha). O en caso de no estar logueado, la palabra "Login". Disculpen que este el punto negro, estuve buscando como eliminarlo y la solucion no lo quito.
+    - Se accede apretando en la foto del Usuario (arriba a la derecha). O en caso de no estar logueado, la palabra "Login".
     - Al no estar logueado, apareceran las opciones de "Login" y "SignUp".
     - Si hay un usuario logueado, se muestran las opciones de "Profile Settings", "Change Avatar" y "LogOut".
     - Si el usuario Admin es el que esta logueado, aparecera "Control Panel", que llevara al panel de administrador.
